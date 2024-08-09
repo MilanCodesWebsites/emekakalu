@@ -1,0 +1,765 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;    
+}
+
+body{
+    font-family: "Livvic";
+    overflow-x: hidden;
+}
+
+  .loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #070707;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+  }
+  
+  .loading-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 6px;
+      background: #feda15;
+      transition: width 2s;
+  }
+  
+  .content {
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+  }
+  
+  .content.visible {
+      opacity: 1;
+  }
+  
+  .floating {
+      transform: translateY(20px);
+      opacity: 0;
+      transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+  }
+  
+  .floating.visible {
+      transform: translateY(0);
+      opacity: 1;
+  }
+
+  
+
+.nav {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  width: 100%;
+  padding: 15px 200px;
+  background: black;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.nav,
+.nav .nav-links {
+  display: flex;
+  align-items: center;
+}
+.nav {
+  justify-content: space-between;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav a:hover{
+    cursor: pointer;
+    color: #feda15;
+}
+.nav .logo {
+  font-size: 22px;
+  font-weight: 500;
+}
+.nav .nav-links {
+  column-gap: 20px;
+  list-style: none;
+}
+.nav .nav-links a {
+  transition: all 0.2s linear;
+}
+.nav.openSearch .nav-links a {
+  opacity: 0;
+  pointer-events: none;
+}
+.nav .search-icon {
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+.nav .search-box {
+  position: absolute;
+  right: 250px;
+  height: 45px;
+  max-width: 555px;
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s linear;
+}
+.nav.openSearch .search-box {
+  opacity: 1;
+  pointer-events: auto;
+}
+.search-box .search-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  left: 15px;
+  color: #4a98f7;
+  transform: translateY(-50%);
+}
+.search-box input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  background-color: #fff;
+  padding: 0 15px 0 45px;
+}
+
+.nav .navOpenBtn,
+.nav .navCloseBtn {
+  display: none;
+}
+
+/* responsive */
+@media screen and (max-width: 1160px) {
+  .nav {
+    padding: 15px 100px;
+  }
+  .nav .search-box {
+    right: 150px;
+  }
+}
+@media screen and (max-width: 950px) {
+  .nav {
+    padding: 15px 50px;
+  }
+  .nav .search-box {
+    right: 100px;
+    max-width: 400px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .nav .navOpenBtn,
+  .nav .navCloseBtn {
+    display: block;
+  }
+  .nav {
+    padding: 15px 20px;
+  }
+  .nav .nav-links {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100%;
+    max-width: 280px;
+    width: 100%;
+    padding-top: 100px;
+    row-gap: 30px;
+    flex-direction: column;
+    background-color: #11101d;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    z-index: 10000;
+  }
+  .nav.openNav .nav-links {
+    left: 0;
+  }
+  .nav .navOpenBtn {
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .nav .navCloseBtn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .nav .search-box {
+    top: calc(100% + 10px);
+    max-width: calc(100% - 20px);
+    right: 50%;
+    transform: translateX(50%);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* From Uiverse.io by mobinkakei */ 
+.wrapper {
+  width: 200px;
+  height: 60px;
+  position: relative;
+  z-index: 1;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  border-radius: 50%;
+  background-color: #feda15;
+  left: 15%;
+  transform-origin: 50%;
+  animation: circle7124 .5s alternate infinite ease;
+}
+
+@keyframes circle7124 {
+  0% {
+    top: 60px;
+    height: 5px;
+    border-radius: 50px 50px 25px 25px;
+    transform: scaleX(1.7);
+  }
+
+  40% {
+    height: 20px;
+    border-radius: 50%;
+    transform: scaleX(1);
+  }
+
+  100% {
+    top: 0%;
+  }
+}
+
+.circle:nth-child(2) {
+  left: 45%;
+  animation-delay: .2s;
+}
+
+.circle:nth-child(3) {
+  left: auto;
+  right: 15%;
+  animation-delay: .3s;
+}
+
+.shadow {
+  width: 20px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: rgba(0,0,0,0.9);
+  position: absolute;
+  top: 62px;
+  transform-origin: 50%;
+  z-index: -1;
+  left: 15%;
+  filter: blur(1px);
+  animation: shadow046 .5s alternate infinite ease;
+}
+
+@keyframes shadow046 {
+  0% {
+    transform: scaleX(1.5);
+  }
+
+  40% {
+    transform: scaleX(1);
+    opacity: .7;
+  }
+
+  100% {
+    transform: scaleX(.2);
+    opacity: .4;
+  }
+}
+
+.shadow:nth-child(4) {
+  left: 45%;
+  animation-delay: .2s
+}
+
+.shadow:nth-child(5) {
+  left: auto;
+  right: 15%;
+  animation-delay: .3s;
+}
+
+.maincont{
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  background-color: #1c1c1c;
+}
+
+.mainconttext{
+  color: white;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.mainconttext i{
+  font-size: 1.9rem;
+  margin: 0px 10px;
+  color: #feda15;
+}
+
+.mainconttext i:hover{
+  color: white;
+  cursor: pointer;
+}
+
+/* From Uiverse.io by portseif */ 
+.maincont button {
+  align-items: center;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.5;
+  text-decoration: none;
+  text-transform: uppercase;
+  outline: 0;
+  border: 0;
+  padding: 1rem;
+  margin: auto;
+}
+
+.maincont button:before {
+  background-color: #fff;
+  content: "";
+  display: inline-block;
+  height: 1px;
+  margin-right: 10px;
+  transition: all .42s cubic-bezier(.25,.8,.25,1);
+  width: 0;
+}
+
+.maincont button:hover{
+  color: #feda15;
+}
+.maincont button:hover:before {
+  background-color: #feda15;
+  width: 3rem;
+}
+
+.container2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 20px;
+  height: auto;
+}
+
+.image-div, .text-div {
+  flex: 1;
+}
+
+.image-div {
+  padding-right: 20px;
+}
+
+.image-div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.text-div {
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+.text-div h1 {
+  font-size: 2em;
+  margin: 0 0 10px;
+}
+
+.text-div p {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+.text-div button {
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2em;
+  text-align: center;
+  align-items: center;
+  align-self: center;
+}
+
+@media (max-width: 768px) {
+  .container2 {
+      flex-direction: column-reverse;
+      padding: 10px;
+  }
+
+  .image-div, .text-div {
+      padding: 0;
+  }
+
+  .image-div {
+      margin-bottom: 20px;
+  }
+
+  .text-div h1 {
+      font-size: 1.5em;
+  }
+
+  .text-div p {
+      font-size: 1em;
+  }
+
+  .text-div button {
+      font-size: 1em;
+      padding: 5px 10px;
+  }
+  .materials p{
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.materials{
+  background: linear-gradient(to bottom, black, #1c1c1c);
+  padding: 10px;
+  text-align: center;
+  color: white;
+  font-size: 1.4rem;
+  max-width: 100%;
+}
+
+.materials p{
+  width: 70%;
+  margin: auto;
+}
+
+.materials h1{
+  color: #feda15;
+}
+
+.body {
+  height: 600px;
+  margin: 0;
+  display: grid;
+  grid-template-rows: 500px 100px;
+  grid-template-columns: 1fr 30px 30px 30px 30px 30px 1fr;
+  align-items: center;
+  justify-items: center;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+main#carousel {
+  grid-row: 1 / 2;
+  grid-column: 1 / 8;
+  width: 100vw;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  perspective: 600px;
+  --items: 5;
+  --middle: 3;
+  --position: 1;
+  pointer-events: none;
+}
+
+.body div.item {
+  position: absolute;
+  width: 300px;
+  height: 400px;
+  
+  --r: calc(var(--position) - var(--offset));
+  --abs: max(calc(var(--r) * -1), var(--r));
+  transition: all 0.25s linear;
+  transform: rotateY(calc(-10deg * var(--r)))
+    translateX(calc(-300px * var(--r)));
+    z-index: calc((var(--position) - var(--abs)));
+}
+.item img{
+  object-fit: cover;
+  width: 100%;
+}
+.item{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+
+}
+.body div.item:nth-of-type(1) {
+  --offset: 1;
+}
+.body div.item:nth-of-type(2) {
+  --offset: 2;
+}
+.body div.item:nth-of-type(3) {
+  --offset: 3;
+}
+.body div.item:nth-of-type(4) {
+  --offset: 4;
+}
+.body div.item:nth-of-type(5) {
+  --offset: 5;
+}
+
+input:nth-of-type(1) {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+input:nth-of-type(1):checked ~ main#carousel {
+  --position: 1;
+}
+
+input:nth-of-type(2) {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+}
+input:nth-of-type(2):checked ~ main#carousel {
+  --position: 2;
+}
+
+input:nth-of-type(3) {
+  grid-column: 4 /5;
+  grid-row: 2 / 3;
+}
+input:nth-of-type(3):checked ~ main#carousel {
+  --position: 3;
+}
+
+input:nth-of-type(4) {
+  grid-column: 5 / 6;
+  grid-row: 2 / 3;
+}
+input:nth-of-type(4):checked ~ main#carousel {
+  --position: 4;
+}
+
+input:nth-of-type(5) {
+  grid-column: 6 / 7;
+  grid-row: 2 / 3;
+}
+input:nth-of-type(5):checked ~ main#carousel {
+  --position: 5;
+}
+
+
+.materials button {
+  width: fit-content;
+  height: 60px;
+  border-radius: 45px;
+  transition: all 0.3s;
+  cursor: pointer;
+  background: white;
+  font-size: 0.9em;
+  font-weight: 550;
+  font-family: inherit;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.materials button:hover {
+  background: #feda15;
+  color: black;
+  font-size: 1.2em;
+}
+
+.testimonial{
+  background-image: url(imgs/3312623.jpg);
+  text-align: center;
+  padding: 40px 0px;
+  background-size: cover;
+}
+
+
+
+.testimonial h1{
+  font-size: 29px;
+  width: fit-content;
+  margin: auto;
+  border-left: 5px solid black;
+  padding-left: 5px;
+}
+
+.x59f-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 50px auto;
+  flex-wrap: wrap;
+  color: black;
+}
+.a9v4-testimonial {
+  text-align: center;
+  max-width: 300px;
+  margin-bottom: 30px;
+}
+.q2l3-image {
+  width: 100%;
+  border-radius: 50%;
+  max-width: 200px;
+  height: auto;
+}
+.m8d2-text {
+  font-style: italic;
+  margin: 20px 0;
+}
+.p5w7-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.z4j1-role {
+  font-weight: bold;
+  color: black;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  .x59f-container {
+      flex-direction: column;
+      align-items: center;
+  }
+  .headec{
+    width: 100%;
+  }
+}
+
+
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  background: linear-gradient(to top, black, #1c1c1c);
+  z-index: 1;
+}
+
+/* Slides */
+.mySlides {
+  display: none;
+  padding: 80px;
+  text-align: center;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -30px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  z-index: 100;
+}
+
+/* Position the "next button" to the right */
+.next {
+  position: absolute;
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+  color: #feda15;
+  z-index: 1;
+}
+
+/* The dot/bullet/indicator container */
+.dot-container {
+  text-align: center;
+  padding: 20px;
+  background: black;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #feda15;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+/* Add a background color to the active dot/circle */
+.active, .dot:hover {
+  background-color: #fedb15e3;
+}
+
+/* Add an italic font style to all quotes */
+q {font-style: italic;
+color: white;
+font-size: 1.3rem;
+}
+
+/* Add a blue color to the author */
+.author {color: #feda15;
+
+font-size: 1.3rem;}
+
+.slideshow-container h3{
+  text-align: center;
+  color: #feda15,
+}
+
+.slideshow-container h1{
+  color: white;
+  text-align: center;
+}
+
+/* For WebKit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: black; /* Color of the track (the background behind the scrollbar) */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #feda15; /* Color of the draggable part of the scrollbar */
+  border-radius: 6px; /* Optional: Adds rounded corners to the scrollbar thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #f4d10bda; /* Optional: Color when hovering over the scrollbar thumb */
+}
+
+.headec{
+  width: 60%;
+  margin: auto;
+}
