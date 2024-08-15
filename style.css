@@ -5,8 +5,8 @@
 }
 
 body{
-    font-family: "Livvic";
     overflow-x: hidden;
+    font-family: "Livvic";
 }
 
   .loading-screen {
@@ -54,7 +54,7 @@ body{
 
   
 
-.nav {
+.nav2 {
   position: fixed;
   z-index: 1000;
   left: 0;
@@ -63,12 +63,12 @@ body{
   background: black;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-.nav,
-.nav .nav-links {
+.nav2,
+.nav2 .nav-links {
   display: flex;
   align-items: center;
 }
-.nav {
+.nav2 {
   justify-content: space-between;
 }
 a {
@@ -76,31 +76,31 @@ a {
   text-decoration: none;
 }
 
-.nav a:hover{
+.nav2 a:hover{
     cursor: pointer;
     color: #feda15;
 }
-.nav .logo {
+.nav2 .logo {
   font-size: 22px;
   font-weight: 500;
 }
-.nav .nav-links {
+.nav2 .nav-links {
   column-gap: 20px;
   list-style: none;
 }
-.nav .nav-links a {
+.nav2 .nav-links a {
   transition: all 0.2s linear;
 }
-.nav.openSearch .nav-links a {
+.nav2 .openSearch .nav-links a {
   opacity: 0;
   pointer-events: none;
 }
-.nav .search-icon {
+.nav2 .search-icon {
   color: #fff;
   font-size: 20px;
   cursor: pointer;
 }
-.nav .search-box {
+.nav2 .search-box {
   position: absolute;
   right: 250px;
   height: 45px;
@@ -110,7 +110,7 @@ a {
   pointer-events: none;
   transition: all 0.2s linear;
 }
-.nav.openSearch .search-box {
+.nav2 .openSearch .search-box {
   opacity: 1;
   pointer-events: auto;
 }
@@ -132,38 +132,38 @@ a {
   padding: 0 15px 0 45px;
 }
 
-.nav .navOpenBtn,
-.nav .navCloseBtn {
+.nav2 .navOpenBtn,
+.nav2 .navCloseBtn {
   display: none;
 }
 
 /* responsive */
 @media screen and (max-width: 1160px) {
-  .nav {
+  .nav2 {
     padding: 15px 100px;
   }
-  .nav .search-box {
+  .nav2 .search-box {
     right: 150px;
   }
 }
 @media screen and (max-width: 950px) {
-  .nav {
+  .nav2 {
     padding: 15px 50px;
   }
-  .nav .search-box {
+  .nav2 .search-box {
     right: 100px;
     max-width: 400px;
   }
 }
 @media screen and (max-width: 768px) {
-  .nav .navOpenBtn,
-  .nav .navCloseBtn {
+  .nav2 .navOpenBtn,
+  .nav2 .navCloseBtn {
     display: block;
   }
-  .nav {
+  .nav2 {
     padding: 15px 20px;
   }
-  .nav .nav-links {
+  .nav2 .nav-links {
     position: fixed;
     top: 0;
     left: -100%;
@@ -178,15 +178,15 @@ a {
     transition: all 0.4s ease;
     z-index: 10000;
   }
-  .nav.openNav .nav-links {
+  .nav2.openNav .nav-links {
     left: 0;
   }
-  .nav .navOpenBtn {
+  .nav2 .navOpenBtn {
     color: #fff;
     font-size: 20px;
     cursor: pointer;
   }
-  .nav .navCloseBtn {
+  .nav2 .navCloseBtn {
     position: absolute;
     top: 20px;
     right: 20px;
@@ -194,7 +194,7 @@ a {
     font-size: 20px;
     cursor: pointer;
   }
-  .nav .search-box {
+  .nav2 .search-box {
     top: calc(100% + 10px);
     max-width: calc(100% - 20px);
     right: 50%;
@@ -591,155 +591,8 @@ input:nth-of-type(5):checked ~ main#carousel {
   font-size: 1.2em;
 }
 
-.testimonial{
-  background-image: url(imgs/3312623.jpg);
-  text-align: center;
-  padding: 40px 0px;
-  background-size: cover;
-}
 
 
-
-.testimonial h1{
-  font-size: 29px;
-  width: fit-content;
-  margin: auto;
-  border-left: 5px solid black;
-  padding-left: 5px;
-}
-
-.x59f-container {
-  display: flex;
-  justify-content: space-around;
-  margin: 50px auto;
-  flex-wrap: wrap;
-  color: black;
-}
-.a9v4-testimonial {
-  text-align: center;
-  max-width: 300px;
-  margin-bottom: 30px;
-}
-.q2l3-image {
-  width: 100%;
-  border-radius: 50%;
-  max-width: 200px;
-  height: auto;
-}
-.m8d2-text {
-  font-style: italic;
-  margin: 20px 0;
-}
-.p5w7-name {
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-.z4j1-role {
-  font-weight: bold;
-  color: black;
-}
-
-/* Mobile View */
-@media (max-width: 768px) {
-  .x59f-container {
-      flex-direction: column;
-      align-items: center;
-  }
-  .headec{
-    width: 100%;
-  }
-}
-
-
-
-/* Slideshow container */
-.slideshow-container {
-  position: relative;
-  background: linear-gradient(to top, black, #1c1c1c);
-  z-index: 1;
-}
-
-/* Slides */
-.mySlides {
-  display: none;
-  padding: 80px;
-  text-align: center;
-}
-
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -30px;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 20px;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  z-index: 100;
-}
-
-/* Position the "next button" to the right */
-.next {
-  position: absolute;
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-  color: #feda15;
-  z-index: 1;
-}
-
-/* The dot/bullet/indicator container */
-.dot-container {
-  text-align: center;
-  padding: 20px;
-  background: black;
-}
-
-/* The dots/bullets/indicators */
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #feda15;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-/* Add a background color to the active dot/circle */
-.active, .dot:hover {
-  background-color: #fedb15e3;
-}
-
-/* Add an italic font style to all quotes */
-q {font-style: italic;
-color: white;
-font-size: 1.3rem;
-}
-
-/* Add a blue color to the author */
-.author {color: #feda15;
-
-font-size: 1.3rem;}
-
-.slideshow-container h3{
-  text-align: center;
-  color: #feda15,
-}
-
-.slideshow-container h1{
-  color: white;
-  text-align: center;
-}
 
 /* For WebKit browsers (Chrome, Safari) */
 ::-webkit-scrollbar {
@@ -762,4 +615,159 @@ font-size: 1.3rem;}
 .headec{
   width: 60%;
   margin: auto;
+}
+
+ 
+
+:root {
+  --space-cadet: #1f2041;
+  --sunglow: #feda15;
+  --dark-cyan: #1c1c1c;
+  --paynes-gray: #000;
+  --light-color: #fff;
+  --muted-color: slategray;
+  --dot-color: #ccc;
+}
+
+
+.containm{
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  color: var(--space-cadet);
+  background: var(--dark-cyan);
+  background: linear-gradient(
+    135deg,
+    var(--sunglow),
+    var(--dark-cyan),
+    var(--paynes-gray)
+  );
+}
+
+.containm h1 {
+  text-align: center;
+  color: var(--paynes-gray);
+}
+
+.containm button {
+  cursor: pointer;
+  border: none;
+}
+
+.testimonial-slider {
+  max-width: 1200px;
+  width: 90%;
+  background-color: var(--light-color);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial-list {
+  display: flex;
+  overflow: hidden;
+}
+
+.testimonial {
+  flex: 1 0 100%;
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.testimonial .bi-quote {
+  font-size: 4rem;
+  color: var(--sunglow);
+  opacity: 0.75;
+}
+
+.testimonial blockquote {
+  font-size: 1.25rem;
+  margin-inline: 20px;
+}
+
+.user-info {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.user-info img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.user-details .name {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--dark-cyan);
+}
+
+.user-details .company {
+  color: var(--muted-color);
+}
+
+/* button navigation */
+
+.containm .nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  background-color: var(--light-color);
+  color: var(--paynes-gray);
+  transition: 0.3s;
+  opacity: 0;
+}
+
+.testimonial-slider:hover .nav {
+  opacity: 1;
+}
+
+.containm .nav:hover {
+  background-color: var(--dark-cyan);
+  color: var(--light-color);
+}
+
+.containm .nav.prev {
+  left: 10px;
+}
+
+.containm .nav.next {
+  right: 10px;
+}
+
+/* dot navigation */
+
+.dots-container {
+  text-align: center;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  border-radius: 5px;
+  margin-inline: 5px;
+  background-color: var(--dot-color);
+  transition: width 0.5s;
+}
+
+.dot.active {
+  width: 30px;
+  background-color: var(--paynes-gray);
 }
