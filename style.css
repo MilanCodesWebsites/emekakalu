@@ -802,4 +802,159 @@ input:nth-of-type(5):checked ~ main#carousel {
   background-color: var(--paynes-gray);
 }
 
+.bigblogcont form{
+  background-color: #000;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+input{
+  width: 49%;
+  padding: 15px 20px;
+  border-radius: 20px;
+  background-color: #20212E;
+  color: white;
+  outline: none;
+  border: none;
+  font-size: 17px;
+  font-family: inherit;
+}
+.email{
+   margin-left: 14px;
+}
+textarea{
+  background-color: #20212E;
+  margin-top: 14px;
+  border-radius: 20px;
+  height: 200px;
+  resize: none;
+  overflow: auto;
+  padding: 15px 20px;
+  color: white;
+  font-family: inherit;
+  font-size: 17px;
+  border: none;
+  outline: none;
+}
 
+.submit{
+  background-color: white;
+  color: black;
+  border-radius: 30px;
+  padding: 12px 17px;
+  margin: auto;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 800;
+  margin-top: 14px;
+}
+.submit:hover{
+  background-color: #feda15;
+  color: #000;
+}
+.submit .fa-angle-right:hover{
+  color: white;
+}
+
+.documentscont{
+  padding: 20px;
+  overflow: auto;
+  text-align: center;
+}
+
+.adobe{
+  width: 48%;
+  padding: 4px;
+  text-align: center;
+  margin-bottom: 14px;
+}
+.adobeicon img{
+  width: 60%;
+  object-fit: cover;
+}
+.adobe:hover{
+  color: #feda15;
+  cursor: pointer;
+}
+
+.maincont2{
+  padding: 10px 30px;
+  display: flex;
+  background-color: #000;
+}
+
+.bigblogcont{
+  width: 65%;
+  padding: 60px 30px;
+}
+.smallblogcont{
+  width: 35%;
+  padding: 60px 30px;
+}
+
+@media screen and (max-width: 800px) {
+  .maincont2{
+      display: block;
+      padding: 10px;
+  }
+  .bigblogcont, .smallblogcont{
+      width: 100%;
+      padding: 10px;
+  }
+  input{
+      width: 100%;
+      margin: auto;
+      margin-bottom: 14px;
+  }
+  .email{
+      margin-left: 0px;
+      margin: auto;
+      width: 100%;
+  }
+}
+
+.footer {
+  padding: 40px 0;
+  text-align: center;
+  color: white;
+  font-size: 24px;
+}
+.footer .contact-info {
+  margin-bottom: 20px;
+}
+.footer .contact-info div {
+  margin: 10px 0;
+}
+.footer .contact-info i {
+  margin-right: 10px;
+}
+.footer .social-icons {
+  margin: 20px 0;
+}
+.footer .social-icons a {
+  margin: 0 10px;
+  color: #d3d3d3;
+  text-decoration: none;
+  font-size: 24px;
+}
+.footer .social-icons a:hover {
+  color: #feda15;
+}
+.footer .rights {
+  margin-top: 20px;
+  font-size: 14px;
+}
+hr {
+  border: none;
+  border-top: 1px solid #555;
+  margin: 20px 0;
+}
+
+
+.modera{
+  color: #feda15;
+  text-align: center;
+  background-color: #000;
+  font-size: 2rem;
+}
