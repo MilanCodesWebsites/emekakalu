@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Animation</title>
+    <style>
+        .typing-container {
+            display: flex;
+            align-items: center;
+        }
+
+        #typing-text {
+            font-size: 24px;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 0.15em solid;
+        }
+
+        .cursor {
+            font-size: 24px;
+            opacity: 1;
+            animation: blink 0.7s steps(5, start) infinite;
+        }
+
+        @keyframes blink {
+            to {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="typing-container">
+        <p id="typing-text"></p>
+        <span class="cursor">|</span>
+    </div>
+    <script>
+        const textElement = document.getElementById('typing-text');
+        const text = "Empowering your journey to success.";
+        let index = 0;
+        let speed = 100; // Speed of typing (in milliseconds)
+
+        function typeText() {
+            textElement.textContent = text.substring(0, index);
+            index++;
+            if (index > text.length) {
+                setTimeout(() => {
+                    index = 0; // Reset index to start typing again
+                    textElement.textContent = ''; // Clear the text
+                    typeText(); // Restart typing
+                }, 1500); // Delay before starting to type again
+            } else {
+                setTimeout(typeText, speed);
+            }
+        }
+
+        window.onload = typeText;
+    </script>
+</body>
+</html>
