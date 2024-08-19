@@ -510,7 +510,7 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-size: 21px;
+  font-size: 15px;
 }
 
 .text-container2 h1 {
@@ -811,7 +811,7 @@ li{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-size: 21px;
+    font-size: 15px;
 }
 
 .text-container h1 {
