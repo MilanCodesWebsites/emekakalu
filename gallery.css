@@ -370,7 +370,7 @@ a {
     }
     .carousel-content img {
     width: 100%;
-    height: auto;
+    height: 50vh;
     border-radius: 10px;
 }
 
