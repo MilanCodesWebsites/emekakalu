@@ -295,13 +295,14 @@ a {
 
 
 .maincont{
-    height: 40vh;
+    height: 60vh;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     align-content: center;
-    background-color: #1c1c1c;
+    background-image: url(Smoke_transition_longclip_high_quality_2.gif);
+    background-size: cover;
   }
   
   .mainconttext{
